@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="id.muf.presentation.viewmodel.SearchUserViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_app_control"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_title_search"
+            android:textSize="18sp"
+            android:layout_marginStart="@dimen/spacing_very_small"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/txt_search_git"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_search_git"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorGray400"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:hintTextColor="@color/colorGray400"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <EditText
+                android:id="@+id/edtxt_search_git"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/txt_search"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/colorGray400"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_submit_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_btn_searc"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:background="@drawable/bg_button_rounded"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginRight="@dimen/spacing_very_large"
+            android:layout_marginLeft="@dimen/spacing_very_large"
+            app:layout_constraintTop_toBottomOf="@+id/txt_search_git"
+            app:layout_constraintLeft_toLeftOf="@+id/txt_search_git"
+            app:layout_constraintRight_toRightOf="@+id/txt_search_git"/>
+
+        <ProgressBar
+            android:id="@+id/pb_search_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/btn_submit_search"
+            app:layout_constraintLeft_toLeftOf="@+id/btn_submit_search"
+            app:layout_constraintRight_toRightOf="@+id/btn_submit_search"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
